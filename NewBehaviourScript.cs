@@ -8,26 +8,25 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     { 
       
+        string[] words = { "Cat", "Dog", "Car", "Pizza", "Hat", "Fish", "Tree", "Monkey", "Ball", "Bird" };
+
+        string sentence = "";
+
+        int wordCount = 0;
+
         System.Random random = new System.Random();
-        
-        while (true)
+
+        while (wordCount < 7)
         {
-            
-            int number = random.Next(1, 21);
+            string randomWord = words[random.Next(words.Length)];
 
-            if (number == 5)
-            {
-                continue;
-            }
+            sentence += randomWord + " ";
 
-            Debug.Log("Generated Number: " + number);
-
-            if (number == 15)
-            {
-                Debug.Log(" 15 exiting loop.");
-                break;
-            }
+            wordCount++;
         }
+
+        Debug.Log("Funny Sentence: " + sentence.Trim());
+    
     }
 
      
